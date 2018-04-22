@@ -61,6 +61,7 @@ public class LogInFragment extends AuthFragment {
                 });
             }
         }
+        lock = true;
     }
 
     @Override

@@ -7,6 +7,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Scroller;
 
 import java.lang.reflect.Field;
@@ -80,7 +81,7 @@ public class AnimatedViewPager extends ViewPager {
 
         @Override
         public void startScroll(int startX, int startY, int dx, int dy) {
-            super.startScroll(startX, startY, dx, dy,duration);
+            super.startScroll(startX, startY, dx, dy, duration);
         }
     }
 }

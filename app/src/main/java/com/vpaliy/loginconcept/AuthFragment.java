@@ -1,5 +1,6 @@
 package com.vpaliy.loginconcept;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 
@@ -19,6 +20,7 @@ import butterknife.ButterKnife;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 
@@ -70,8 +72,11 @@ public abstract class AuthFragment extends Fragment {
 
     @OnClick(R.id.root)
     public void unfold() {
+        InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context
+                .INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(caption.getWindowToken(), 0); //强制隐藏键盘
+
         if (!lock) {
-//            caption.setVerticalText(false);
             caption.requestLayout();
             Rotate transition = new Rotate();
             transition.setStartAngle(-90f);
